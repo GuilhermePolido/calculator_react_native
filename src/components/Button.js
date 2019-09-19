@@ -3,18 +3,18 @@ import {StyleSheet, Text, Dimensions, TouchableHighlight} from 'react-native';
 
 const style = StyleSheet.create({
     button: {
-        fontSize: 40,
+        fontSize: 35,
         height: Dimensions.get('window').width / 4,
         width: Dimensions.get('window').width / 4,
         padding: 20,
         backgroundColor: '#f0f0f0',
         textAlign: 'center',
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: '#888',
     },
     operationButton: {
         color: '#fff',
-        backgroundColor: 'orange',
+        backgroundColor: '#0AA',
     },
     buttonDouble: {
         width: (Dimensions.get('window').width / 4) * 2,

@@ -76,29 +76,99 @@ export default class App extends Component {
         }
     };
 
+    renderKeys = () => {
+        const renderedButtons = [];
+
+        const keysMap = [
+            {
+                label: 'AC',
+                onClick: this.clearMemory,
+                triple: true,
+            },
+            {
+                label: '/',
+                onClick: this.setOperation,
+                operation: true,
+            },
+            {
+                label: '7',
+                onClick: this.addDigit,
+            },
+            {
+                label: '8',
+                onClick: this.addDigit,
+            },
+            {
+                label: '9',
+                onClick: this.addDigit,
+            },
+            {
+                label: '*',
+                onClick: this.setOperation,
+                operation: true,
+            },
+            {
+                label: '4',
+                onClick: this.addDigit,
+            },
+            {
+                label: '5',
+                onClick: this.addDigit,
+            },
+            {
+                label: '6',
+                onClick: this.addDigit,
+            },
+            {
+                label: '-',
+                onClick: this.setOperation,
+                operation: true,
+            },
+            {
+                label: '1',
+                onClick: this.addDigit,
+            },
+            {
+                label: '2',
+                onClick: this.addDigit,
+            },
+            {
+                label: '3',
+                onClick: this.addDigit,
+            },
+            {
+                label: '+',
+                onClick: this.setOperation,
+                operation: true,
+            },
+            {
+                label: '0',
+                onClick: this.addDigit,
+                double: true,
+            },
+            {
+                label: '.',
+                onClick: this.addDigit,
+            },
+            {
+                label: '=',
+                onClick: this.setOperation,
+                operation: true,
+            },
+        ];
+
+        keysMap.forEach((item, index) => {
+            renderedButtons.push(<Button key={`button-${index}`} {...item} />);
+        });
+
+        return renderedButtons;
+    };
+
     render() {
         return (
             <View style={styles.container}>
                 <Display value={this.state.displayValue} />
-                <View style={styles.buttons}>
-                    <Button label="AC" triple onClick={this.clearMemory} />
-                    <Button label="/" onClick={this.setOperation} operation />
-                    <Button label="7" onClick={this.addDigit} />
-                    <Button label="8" onClick={this.addDigit} />
-                    <Button label="9" onClick={this.addDigit} />
-                    <Button label="*" onClick={this.setOperation} operation />
-                    <Button label="4" onClick={this.addDigit} />
-                    <Button label="5" onClick={this.addDigit} />
-                    <Button label="6" onClick={this.addDigit} />
-                    <Button label="-" onClick={this.setOperation} operation />
-                    <Button label="1" onClick={this.addDigit} />
-                    <Button label="2" onClick={this.addDigit} />
-                    <Button label="3" onClick={this.addDigit} />
-                    <Button label="+" onClick={this.setOperation} operation />
-                    <Button label="0" onClick={this.addDigit} double />
-                    <Button label="." onClick={this.addDigit} />
-                    <Button label="=" onClick={this.setOperation} operation />
-                </View>
+                <View style={styles.buttons}>{this.renderKeys()}</View>
             </View>
         );
     }
