@@ -164,10 +164,20 @@ export default class App extends Component {
         return renderedButtons;
     };
 
+    getSecondaryValue = () => {
+        const {current, values, operation} = this.state;
+        if (current === 1) {
+            return `${values[0]} ${operation} ${values[1]}`;
+        }
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <Display value={this.state.displayValue} />
+                <Display
+                    value={this.state.displayValue}
+                    secondaryValue={this.getSecondaryValue()}
+                />
                 <View style={styles.buttons}>{this.renderKeys()}</View>
             </View>
         );

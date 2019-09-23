@@ -13,11 +13,16 @@ const styles = StyleSheet.create({
         fontSize: 60,
         color: '#fff',
     },
+    secondaryValue: {
+        color: '#fff',
+        fontSize: 20,
+    },
 });
 
 export default props => {
     return (
         <View style={styles.display}>
+            <Text style={styles.secondaryValue}>{props.secondaryValue}</Text>
             <Text style={styles.displayValue} numberOfLines={1}>
                 {props.value}
             </Text>
